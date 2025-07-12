@@ -1,10 +1,9 @@
-
 services:
   - type: web
     name: muta-api
     env: python
     buildCommand: ""
-    startCommand: "python app.py"
+    startCommand: "gunicorn -b 0.0.0.0:5000 app:app"
     envVars:
       - key: OPENAI_API_KEY
         sync: false
