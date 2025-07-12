@@ -5,6 +5,10 @@ import os
 app = Flask(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
+@app.route("/", methods=["GET"])
+def home():
+    return "🔥 MUTA API is running!"
+
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
