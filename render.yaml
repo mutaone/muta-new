@@ -3,7 +3,7 @@ services:
     name: muta-api
     env: python
     buildCommand: ""
-    startCommand: "gunicorn app:app"
+    startCommand: python app.py
     envVars:
       - key: OPENAI_API_KEY
         sync: false
